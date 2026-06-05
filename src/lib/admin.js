@@ -1,7 +1,7 @@
 // Liste des emails administrateurs
 // Ajouter/retirer des emails ici pour gérer les admins
 export const ADMIN_EMAILS = [
-  'amichiatehiel@gmail.com',
+  'amichiaethiel@gmail.com',
 ]
 
 /**
