@@ -1,0 +1,194 @@
+.wrapper {
+  min-height: calc(100vh - 128px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #fbeaf0 0%, #faeeda 100%);
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 24px rgba(212,83,126,0.1);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--pink);
+  display: block;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.logo span { color: #1a1a1a; }
+
+.tabs {
+  display: flex;
+  background: #f5f5f5;
+  border-radius: 10px;
+  padding: 3px;
+  margin-bottom: 28px;
+}
+.tab {
+  flex: 1;
+  background: none; border: none;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.activeTab { background: white; color: #1a1a1a; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+
+.form { display: flex; flex-direction: column; gap: 16px; }
+
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label {
+  font-size: 13px; font-weight: 500; color: #444;
+  display: flex; justify-content: space-between;
+}
+
+.inputWrap { position: relative; }
+.inputIcon {
+  position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+  color: #bbb; pointer-events: none;
+}
+.eyeBtn {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; color: #bbb; cursor: pointer;
+  display: flex; align-items: center;
+}
+.eyeBtn:hover { color: #888; }
+
+.forgot { font-size: 12px; color: var(--pink); font-weight: 400; }
+.forgot:hover { text-decoration: underline; }
+
+.submitBtn { width: 100%; justify-content: center; margin-top: 4px; padding: 12px; }
+
+.switchMode {
+  text-align: center; font-size: 14px; color: #888; margin-top: 20px;
+}
+.switchMode button {
+  background: none; border: none; color: var(--pink);
+  font-weight: 500; cursor: pointer; font-size: 14px;
+}
+.switchMode button:hover { text-decoration: underline; }
+/* ── Social login buttons ── */
+.socialBtns {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.socialBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s;
+  border: 1.5px solid #e5e5e5;
+  background: white;
+  color: #1a1a1a;
+}
+.socialBtn:hover:not(:disabled) {
+  background: #f9f9f9;
+  border-color: #ccc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.socialBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.appleSocialBtn {
+  background: #000;
+  color: white;
+  border-color: #000;
+}
+.appleSocialBtn:hover:not(:disabled) {
+  background: #222;
+  border-color: #222;
+}
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #ccc;
+  font-size: 13px;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: spinAuth 0.6s linear infinite;
+  display: inline-block;
+}
+@keyframes spinAuth { to { transform: rotate(360deg); } }
+/* ── Google button ── */
+.googleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s;
+  border: 1.5px solid #e5e5e5;
+  background: white;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+.googleBtn:hover:not(:disabled) {
+  background: #f9f9f9;
+  border-color: #ccc;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+.googleBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  color: #ccc;
+  font-size: 13px;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(0,0,0,0.15);
+  border-top-color: #4285F4;
+  border-radius: 50%;
+  animation: spinAuth 0.6s linear infinite;
+  display: inline-block;
+}
+@keyframes spinAuth { to { transform: rotate(360deg); } }

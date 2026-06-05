@@ -1,0 +1,119 @@
+.card {
+  background: white;
+  border: 0.5px solid #ececec;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: block;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+.imgWrap {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.card:hover .img { transform: scale(1.05); }
+
+.emoji { font-size: 52px; }
+
+.discount, .new {
+  position: absolute;
+  top: 8px; left: 8px;
+  font-size: 11px; font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+.discount { background: var(--pink); color: white; }
+.new { background: #1D9E75; color: white; }
+
+.favBtn {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: white;
+  border: none;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.12);
+  color: #bbb;
+  transition: color 0.2s, transform 0.15s;
+}
+.favBtn:hover { color: var(--pink); transform: scale(1.1); }
+.favActive { color: var(--pink) !important; }
+
+.info { padding: 10px 12px; }
+
+.shopName {
+  font-size: 11px;
+  color: #999;
+  margin-bottom: 3px;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(212, 83, 126, 0.78);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+}
+.imgWrap:hover .overlay {
+  opacity: 1;
+}
+.name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  line-height: 1.4;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.row { margin-bottom: 8px; }
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  color: #BA7517;
+}
+.reviewCount { color: #aaa; font-size: 11px; }
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addBtn {
+  background: var(--pink);
+  color: white;
+  border: none;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  font-size: 18px;
+  display: flex; align-items: center; justify-content: center;
+  line-height: 1;
+  transition: background 0.2s, transform 0.15s;
+}
+.addBtn:hover { background: var(--pink-dark); transform: scale(1.1); }

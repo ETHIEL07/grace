@@ -1,0 +1,126 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: white;
+  border-bottom: 0.5px solid #e8e8e8;
+  height: var(--nav-height);
+}
+
+.inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--pink);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.logo span { color: #1a1a1a; }
+
+.searchForm {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f5f5f5;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  padding: 8px 16px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.searchForm:focus-within {
+  background: white;
+  border-color: var(--pink);
+}
+
+.searchIcon { color: #999; flex-shrink: 0; }
+
+.searchInput {
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 14px;
+  color: #1a1a1a;
+  width: 100%;
+  outline: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.iconBtn {
+  position: relative;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  color: #444;
+  transition: background 0.2s, color 0.2s;
+}
+.iconBtn:hover { background: var(--pink-light); color: var(--pink); }
+
+.badge {
+  position: absolute;
+  top: 4px; right: 4px;
+  background: var(--pink);
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.loginBtn { margin-left: 4px; }
+
+.menuBtn {
+  display: flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  background: none;
+  border: none;
+  padding: 6px;
+  color: #444;
+  border-radius: 8px;
+}
+.menuBtn:hover { background: #f5f5f5; }
+
+.mobileMenu {
+  position: absolute;
+  top: 100%; left: 0; right: 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.mobileMenu a {
+  padding: 12px 0;
+  border-bottom: 0.5px solid #f0f0f0;
+  font-size: 15px;
+  color: #333;
+}
+.mobileMenu a:last-child { border: none; }
+
+@media (max-width: 768px) {
+  .searchForm { display: none; }
+  .loginBtn { display: none; }
+  .menuBtn { display: flex; }
+}
+@media (max-width: 480px) {
+  .inner { gap: 8px; }
+}

@@ -1,0 +1,116 @@
+.pageTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.pageDesc {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.searchBar {
+  position: relative;
+  margin-bottom: 28px;
+}
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+.searchInput {
+  width: 100%;
+  padding: 12px 16px 12px 42px;
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  font-size: 14px;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.18s;
+}
+.searchInput:focus { border-color: var(--primary); }
+
+.section { margin-bottom: 36px; }
+.sectionTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+.resultsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.count {
+  font-size: 13px;
+  color: #999;
+}
+
+/* Boutiques grid */
+.shopGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+.shopCard {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 14px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.18s, transform 0.15s, box-shadow 0.15s;
+}
+.shopCard:hover {
+  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(212, 83, 126, 0.12);
+}
+.shopActive {
+  border-color: var(--primary) !important;
+  background: #fff0f6 !important;
+}
+.shopEmoji { font-size: 28px; display: block; margin-bottom: 6px; }
+.shopName  { font-weight: 700; font-size: 13px; color: var(--text); }
+.shopMeta  { display: flex; align-items: center; gap: 3px; justify-content: center; font-size: 12px; color: #888; margin: 4px 0; }
+.shopSub   { font-size: 11px; color: #bbb; }
+.shopDesc  { font-size: 11px; color: #999; margin-top: 4px; line-height: 1.4; }
+
+/* Catégories pills */
+.catScroll {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.catPill {
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s;
+  color: var(--text);
+}
+.catPill:hover { border-color: var(--primary); }
+.catActive {
+  background: var(--primary) !important;
+  border-color: var(--primary) !important;
+  color: white !important;
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 48px 20px;
+  color: #999;
+  text-align: center;
+}

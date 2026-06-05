@@ -1,0 +1,196 @@
+/* ── Hero Carrousel ──────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .hero { height: 480px; }
+}
+
+/* Slides */
+.heroSlides { position: absolute; inset: 0; }
+.heroSlide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.heroSlide img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.heroSlideActive { opacity: 1; }
+.heroOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
+}
+
+/* Content */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  padding: 0 28px 0 5%;
+  color: white;
+}
+
+.heroTitle {
+  font-size: clamp(28px, 5vw, 52px);
+  margin: 14px 0 16px;
+  line-height: 1.12;
+  color: white;
+}
+.heroTitle em {
+  font-style: italic;
+  color: #f9a8c9;
+}
+
+.heroSubtitle {
+  font-size: 16px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.6;
+  margin-bottom: 28px;
+  max-width: 440px;
+}
+
+.heroBtns { display: flex; gap: 12px; flex-wrap: wrap; }
+.heroBtns .btn-outline {
+  border-color: white;
+  color: white;
+}
+.heroBtns .btn-outline:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  background: rgba(255,255,255,0.18);
+  border: 1.5px solid rgba(255,255,255,0.35);
+  color: white;
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.arrow:hover { background: rgba(212,83,126,0.75); border-color: transparent; transform: translateY(-50%) scale(1.08); }
+.arrowLeft { left: 16px; }
+.arrowRight { right: 16px; }
+
+@media (max-width: 480px) {
+  .arrow { width: 36px; height: 36px; }
+  .arrowLeft { left: 10px; }
+  .arrowRight { right: 10px; }
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 7px;
+}
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.45);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+}
+.dotActive {
+  background: #f9a8c9;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* Trust bar */
+.trustBar {
+  background: white;
+  border-top: 0.5px solid #eee;
+  border-bottom: 0.5px solid #eee;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}
+.trustItem {
+  display: flex; align-items: center; gap: 7px;
+  padding: 7px 20px;
+  font-size: 12.5px; color: #555;
+  border-right: 0.5px solid #eee;
+}
+.trustItem:last-child { border-right: none; }
+.trustItem svg { color: var(--pink); flex-shrink: 0; }
+
+@media (max-width: 640px) {
+  .trustItem { padding: 6px 12px; font-size: 11.5px; }
+}
+
+/* Sections */
+.section { padding: 32px 0 8px; }
+
+.sectionHeader {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.sectionTitle { font-size: 22px; margin: 0; }
+.seeAll { font-size: 14px; color: var(--pink); font-weight: 500; }
+.seeAll:hover { text-decoration: underline; }
+
+/* Categories */
+.catScroll {
+  display: flex; gap: 8px;
+  overflow-x: auto; padding-bottom: 4px;
+  scrollbar-width: none;
+}
+.catScroll::-webkit-scrollbar { display: none; }
+.catPill {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 7px 16px;
+  font-size: 13px; font-weight: 500; color: #555;
+  white-space: nowrap;
+  transition: all 0.2s; cursor: pointer;
+}
+.catPill:hover { border-color: var(--pink); color: var(--pink); }
+.catActive { background: var(--pink); color: white; border-color: var(--pink); }
+
+/* Shops */
+.shopsSection { padding: 32px 0 40px; background: #fafafa; }
+.shopsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.shopCard {
+  background: white;
+  border: 0.5px solid #ececec;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+}
+.shopCard:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.shopEmoji { font-size: 36px; margin-bottom: 10px; }
+.shopName { font-size: 16px; font-weight: 600; font-family: var(--font-serif); margin-bottom: 6px; }
+.shopMeta { display: flex; gap: 10px; align-items: center; font-size: 12px; color: #888; margin-bottom: 8px; }
+.shopCount { color: #bbb; }
+.shopDesc { font-size: 13px; color: #777; line-height: 1.4; margin: 0; }
