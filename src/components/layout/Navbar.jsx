@@ -76,14 +76,15 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className={styles.mobileMenu}>
-          <Link to="/" onClick={() => setMenuOpen(false)}>🏠 Accueil</Link>
-          <Link to="/boutiques" onClick={() => setMenuOpen(false)}>🛍️ Explorer la boutique</Link>
-          <Link to="/search" onClick={() => setMenuOpen(false)}>🔍 Tous les sacs</Link>
-          <Link to="/favoris" onClick={() => setMenuOpen(false)}>❤️ Mes favoris</Link>
+          <Link to="/search" onClick={() => setMenuOpen(false)}>Produits</Link>
+          <Link to="/favoris" onClick={() => setMenuOpen(false)}>Commandes</Link>
+          <Link to="/panier" onClick={() => setMenuOpen(false)}>Vendus</Link>
           {user ? (
-            <Link to="/compte" onClick={() => setMenuOpen(false)}>👤 Mon compte</Link>
+            <Link to="/compte" onClick={() => setMenuOpen(false)}>Mon compte</Link>
           ) : (
-            <Link to="/connexion" onClick={() => setMenuOpen(false)}>🔑 Connexion / Inscription</Link>
+            <Link to="/connexion" className="btn btn-primary btn-sm" onClick={() => setMenuOpen(false)}>
+              Connexion
+            </Link>
           )}
         </div>
       )}
